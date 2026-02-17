@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char binary[32]; 
+    int decimal = 0, length;
+
+  
+    scanf("%s", binary);
+
+    length = strlen(binary);
+
+    
+    for (int i = 0; i < length; i++) {
+        if (binary[i] == '1') {
+            
+            decimal += 1 << (length - i - 1); 
+    }
+
+    }
+    printf("%d\n", decimal);
+
+    return 0;
+}
