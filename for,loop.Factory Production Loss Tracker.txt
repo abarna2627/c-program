@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);  
+
+    int units;
+    int Total_Loss = 0;
+    int High_loss_Days = 0;
+
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &units);  
+        Total_Loss += units;  
+        if (units > 100) {
+            High_loss_Days ++;  
+        }
+    }
+
+    printf("Total loss: %d\n",Total_Loss);
+    printf("High Loss Days: %d\n",High_loss_Days );
+
+    return 0;
+}
