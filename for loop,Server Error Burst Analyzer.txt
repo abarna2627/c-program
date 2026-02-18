@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+   int N;
+   scanf("%d",&N);
+   int per_hour;
+   int Total_Errors = 0,Critical_Hours = 0;
+   for(int i = 0; i<N; i++){
+       scanf("%d",&per_hour);
+      
+      Total_Errors += per_hour;
+      
+       if(per_hour > 50) {
+         Critical_Hours++;
+       }
+       }
+       printf("Total Errors: %d\n",Total_Errors);
+       printf("Critical Hours: %d\n",Critical_Hours);
+    return 0;
+}
