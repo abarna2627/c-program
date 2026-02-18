@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int TotalData, N;
+    scanf("%d", &TotalData);  
+    scanf("%d", &N);          
+
+    int GB;
+    int RemainingData = TotalData;
+    int SuccessfulDays = 0;
+
+    for (int i = 1; i < N; i++) {
+        scanf("%d", &GB);
+
+        if (GB <= 10 && GB <= RemainingData) {
+            SuccessfulDays++;
+        }
+
+        RemainingData -= GB;
+        if (RemainingData < 0) {
+            RemainingData = 0; 
+        }
+    }
+
+    printf("Remaining Data: %d\n", RemainingData);
+    printf("Successful Days: %d\n", SuccessfulDays);
+
+    return 0;
+}
