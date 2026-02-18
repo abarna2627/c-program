@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+  
+    scanf("%d", &N);
+
+    int noise_level;
+     int Maximum_Noise = 0;
+     int Noisy_periods = 0;
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &noise_level);
+     
+       if (noise_level > Maximum_Noise){
+            Maximum_Noise = noise_level;
+       }
+        if (noise_level > 70) {
+             Noisy_periods++;
+        }
+    }
+
+   
+
+    printf("Maximum Noise: %d\n", Maximum_Noise);
+    printf("Noisy Periods: %d\n",Noisy_periods );
+    
+    return 0;
+}
