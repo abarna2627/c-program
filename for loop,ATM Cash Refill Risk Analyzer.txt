@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int initialCash, N;
+    scanf("%d", &initialCash);
+    scanf("%d", &N);
+
+    int withdrawals[N];
+    for(int i = 0; i < N; i++) {
+        scanf("%d", &withdrawals[i]);
+    }
+
+    int remainingCash = initialCash;
+    int riskCount = 1;
+
+    for(int i =0; i < N; i++) {
+        remainingCash -= withdrawals[i];
+       
+        if(remainingCash < 5000) {
+            riskCount++;
+        }
+    }
+
+    printf("Remaining Cash: %d\n", remainingCash);
+    printf("Risk Count: %d\n", riskCount);
+
+    return 0;
+}
