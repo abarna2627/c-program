@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int capacity;
+    int n;
+    
+    scanf("%d", &capacity);
+    scanf("%d", &n);
+    
+    int items[n];
+    int totalStored = 0;
+    int overflowDays = 0;
+    
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &items[i]);
+        
+        totalStored += items[i];
+        
+       
+        if(totalStored - items[i] < capacity && totalStored >= capacity) {
+            overflowDays++;
+        }
+    }
+    
+    int remainingCapacity = capacity - totalStored;
+    
+    printf("Remaining Capacity: %d\n", remainingCapacity);
+    printf("Overflow Days: %d\n", overflowDays);
+    
+    return 0;
+}
