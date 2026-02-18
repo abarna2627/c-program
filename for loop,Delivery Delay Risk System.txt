@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int min;
+    int Total_Delay= 0;
+    int Delayed_Deliveries=0;
+
+    for(int i = 0; i < N; i++) {
+        scanf("%d", &min);
+
+        
+          Total_Delay += min;
+      
+        if(min >=30) {
+           Delayed_Deliveries++;
+        }
+    }
+
+    printf("Total Delay: %d\n",Total_Delay);
+    printf("Delayed_Deliveries: %d\n",Delayed_Deliveries );
+
+    return 0;
+}
+]
