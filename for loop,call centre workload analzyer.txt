@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+    
+    int workload;
+    int TotalCalls = 0;
+    int Overloadedhours = 0;
+    
+   
+    for(int i = 0; i < N; i++) {
+        scanf("%d", &workload);
+        TotalCalls += workload;
+        
+      
+        if(workload>=40) {
+            Overloadedhours ++;
+        }
+    }
+    
+   
+    printf("Total Calls : %d\n", TotalCalls );
+    printf(" Overloaded Hours : %d\n",  Overloadedhours );
+    
+    return 0;
+}
