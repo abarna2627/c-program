@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int maxWeight, N;
+    scanf("%d", &maxWeight);  
+    scanf("%d", &N);          
+
+    int i = 0;
+    int currentWeight = 0;
+    int passengerWeight;
+    int passengersAllowed = 0;
+
+    while (i < N) {
+        scanf("%d", &passengerWeight);
+
+        if (currentWeight + passengerWeight <= maxWeight) {
+            currentWeight += passengerWeight;
+            passengersAllowed++;
+        } else {
+            
+        }
+        i++;
+    }
+
+    printf("Passengers Allowed: %d\n", passengersAllowed);
+    if (passengersAllowed < N) {
+        printf("Overload: Yes\n");
+    } else {
+        printf("Overload: No\n");
+    }
+
+    return 0;
+}
