@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int i = 0;
+    int Machine;
+    int CurrentStreak = 0;
+    int LongestFailureStreak = 0;
+
+    while(i < N){
+        scanf("%d", &Machine);
+
+        if(Machine == 0){
+            CurrentStreak++;
+            if(CurrentStreak > LongestFailureStreak){
+                LongestFailureStreak = CurrentStreak;
+            }
+        }
+        else {
+            CurrentStreak = 0;
+        }
+
+        i++;
+    }
+
+   
+    printf("Longest Failure Streak: %d\n", LongestFailureStreak);
+
+    return 0;
+}
