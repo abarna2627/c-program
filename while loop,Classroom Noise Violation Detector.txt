@@ -1,0 +1,34 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+ int N;
+ scanf("%d",&N);
+  
+ int i = 0;
+ int Noise;
+ int Violations = 0;
+ int CurrentStreak=0;
+ int LongestViolationStreak = 0;
+ while(i < N){
+ scanf("%d",&Noise);
+ if ( Noise > 70){
+  Violations++;
+  CurrentStreak++;
+  
+  if (CurrentStreak > LongestViolationStreak){
+   LongestViolationStreak = CurrentStreak;
+  }
+ }
+  else{
+      CurrentStreak = 0;
+  }
+  i++;
+ }
+  printf("Noise Violations: %d\n",Violations);
+  printf("Longest Violation Streak: %d\n",LongestViolationStreak );
+  
+  return 0;
+}
+ 
+ 
