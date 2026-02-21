@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int payments[n];
+    int i = 0;
+
+   
+    while (i < n) {
+        scanf("%d", &payments[i]);
+        i++;
+    }
+
+    int max_streak = 0;
+    int current_streak = 0;
+    i = 0;
+
+    while (i < n) {
+        if (payments[i] == 0) {
+            current_streak++;
+            if (current_streak > max_streak) {
+                max_streak = current_streak;
+            }
+        } else {
+            current_streak = 0;
+        }
+        i++;
+    }
+
+    printf("Longest Default Streak: %d\n", max_streak);
+
+    return 0;
+}
