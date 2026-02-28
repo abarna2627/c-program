@@ -1,0 +1,44 @@
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+   
+    scanf("%d", &n);
+    
+    int vibration[n];
+    
+  
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &vibration[i]);
+    }
+    
+    int i = 0;
+    int consecutiveHigh = 0;
+    int unsafeCount = 0;
+    int breakdownReading = 0;
+    
+   
+    while(i < n) {
+        if(vibration[i] > 70) {
+            unsafeCount++;
+            consecutiveHigh++;
+            
+            
+            if(consecutiveHigh == 3 && breakdownReading == 0) {
+                breakdownReading = i + 1; 
+            }
+        } else {
+            consecutiveHigh = 0;
+        }
+        
+        i++;
+    }
+    
+  
+    printf("Breakdown At Reading: %d\n", breakdownReading);
+    printf("Unsafe Readings: %d\n", unsafeCount);
+    
+    return 0;
+}
